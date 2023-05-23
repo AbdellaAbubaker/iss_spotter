@@ -1,23 +1,19 @@
-const { fetchMyIP } = require('./iss');
+const { fetchCoordsByIP } = require('./iss');
 
-const fetchMyIP = function (callback) {
-  axios.get('https://api.ipify.org?format=json')
-  .then(response => {
-    if (response.status !== 200) {
-      throw new Error(`Requerst failed with status code ${response.status}`);
-    }
-    const ip = response.data.ip;
-    callback(null, ip);
+// Comment out the call to fetchCoordsByIP
+// const ip = '192.0.2.1'; // Replace with your IP address
 
-    })
-    .catch(error => {
-      callback(error, null);
-    });
-
-  }
+// fetchCoordsByIP(ip, (error, data) => {
+//   if (error) {
+//     console.log('Error:', error.error);
+//   } else {
+//     console.log('Latitude:', data.latitude);
+//     console.log('Longitude:', data.longitude);
+//   }
+// });
 
 
-    dule.exports = {fetchMyIP}
+
 
   
   
